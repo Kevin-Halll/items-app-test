@@ -15,6 +15,11 @@ export class ItemsService {
   getAllItems():Observable<APIResponse<Item[]>>{
     return this.http.get<APIResponse<Item[]>>(this.apiURL)
   }
+  /**
+   ---------------------------------------
+   create items service method
+  ----------------------------------------
+   */
   createItem(data:Item): Observable<APIResponse<Item>>{
     return this.http.post<APIResponse<Item>>(this.apiURL, data);
   }
