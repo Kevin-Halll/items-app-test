@@ -1,0 +1,25 @@
+<section class="pt-10">
+    <h1 class="text-center font-bold text-4xl pb-4 text-cyan-500">All Items</h1>
+    <div class="w-[50%] m-auto">
+        <div class="flex text-center shadow-md font-bold border-b-2 border-b-cyan-500">
+            <h1 class="border p-3 w-full">Item Name</h1>
+            <h1 class="border p-3 w-full">Quantity</h1>
+            <h1 class="border p-3 w-full">Cost</h1>
+        </div>
+
+        <div *ngFor="let item of items" class="flex text-center shadow-md border my-2">
+            <h1 class="p-3 w-full">{{item.item_name}}</h1>
+            <h1 class="p-3 w-full" [ngClass]="{'bg-red-200':item.quantity <= 5}">{{item.quantity}}</h1>
+            <h1 class="p-3 w-full">${{item.cost}}</h1>
+        </div>
+
+        <div class="flex text-center shadow-md border my-2">  
+            <div class="w-full flex justify-between p-3">
+                <p class="font-bold">Total Cost of All Items</p> <p class="font-bold text-cyan-500">${{totalCost}}</p>
+            </div>
+        </div>
+
+
+        
+    </div>
+</section>
